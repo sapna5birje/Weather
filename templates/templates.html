@@ -1,0 +1,59 @@
+<style>
+.inputs {
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+    justify-content: center;
+    background: white;
+
+}
+
+.inputs input[type="text"] {
+    height: 3.5rem;
+    width: 20rem;
+    background: #212121;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid #c2c2c2;
+    border-radius: 2px;
+    margin-right:4px ;
+
+}
+.inputs input[type="submit"] {
+    height: 3.2rem;
+    width: 6.5rem;
+    background: #0a67ca;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border: none;
+    border-radius: 2px;
+}
+.errormessage{
+        left: 40%;
+    position: relative;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<form action="weather/" method="post">
+    {% csrf_token %}
+    <section class="inputs">
+                <input type="text" placeholder="Enter any city..." name="City">
+                <input type="submit" value="submit" name="submit">
+            
+            </section>
+</form>
+<div class="errormessage">{{ERROR}}</div>

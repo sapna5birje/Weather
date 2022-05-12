@@ -1,0 +1,146 @@
+
+
+
+{{curentuser.username}}
+
+
+
+
+<style>
+@import "compass/css3";
+
+
+html{
+  font-family: 'Roboto Slab', sans-serif;
+}
+body{
+  background: #55D6F4;
+  color: #313E48;
+}
+img{
+  max-width: 100%;
+}
+
+
+
+  h1{
+    font-size: 2em;
+    text-align: center;
+  }
+  .temp{
+    font-size: 4em;
+    line-height: 1;
+    text-align: center;
+    display: block;
+    padding-left: 50px;
+    margin-bottom: 24px;
+  }
+  .high-low{
+    font-size: 2em;
+    color: lighten(#313E48, 20%);
+    text-align: center;
+    display: block;
+    font-weight: 100;
+  }
+}
+.weather .icon{
+  position: relative;
+  margin: 0 auto;
+}
+.spin{
+  position: absolute;
+  top: 16px;
+  right: 62%;
+  text-align: center;
+  width: 65px;
+}
+
+
+
+
+  
+//Animation
+.spin img{
+  animation: spin 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.box:hover .spin img{
+   animation-play-state: running;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.right{
+	padding-right: 70px;
+}
+.tables{
+	top: 108px;
+    position: relative;
+    left: 133px;
+}
+</style>
+
+
+
+
+
+
+ 
+    <div class="spin">
+    
+      
+      <img src="{{icon}}">
+    	
+    </div>
+
+    
+
+
+  <h1>{{day}}</h1>
+  <span class="temp">Temp {{ip}}&deg;</span>
+  <span class="high-low">Feels like {{feelslike}}</span>
+  <span class="high-low">Humidity {{humidity}}</span>
+  
+  
+
+
+
+<br>
+<br><br>
+<br>
+
+<table class="tables">
+
+	<tr>
+
+	<th class="right">Info</th>
+{% for i in listday %}
+  
+    <th class="right">{{i}}</th>
+ 
+  {% endfor %}
+   </tr>
+
+
+<tr>
+	<th class="right">Temp</th>
+  {% for i in forcasteresults %}
+  
+    <td>{{i}}</td>
+ 
+  {% endfor %}
+   </tr>
+<tr>
+	<th class="right">Feelslike</th>
+  {% for i in listfeels %}
+  
+    <td>{{i}}</td>
+ 
+  {% endfor %}
+   </tr>
+</table>
+	
+
